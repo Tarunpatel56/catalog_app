@@ -27,7 +27,7 @@ class LoginFaceScreen extends StatelessWidget {
           SharedPreferences prefs =
               await SharedPreferences.getInstance();
 
-          String? savedFaceId =
+          String? savedFaceId = 
               prefs.getString("saved_face_id");
 
           String? currentFaceId =
