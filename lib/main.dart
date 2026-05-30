@@ -1,5 +1,6 @@
-import 'package:catalog_app/login_screen.dart';
-import 'package:catalog_app/new/home_page.dart';
+
+
+import 'package:catalog_app/new/view/widget_tree.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -23,7 +24,7 @@ class MyApp extends StatelessWidget {
         ),
         
       ),
-      home:  HomePage(),
+      home:  WidgetTree(),
     );
   }
 }
