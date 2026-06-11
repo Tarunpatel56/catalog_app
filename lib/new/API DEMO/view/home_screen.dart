@@ -10,15 +10,46 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  bool isReady = false;
   singlepostmodel singlePostModel = singlepostmodel();
+  _getSinglePost() {
+    isReady = true;
+    ApiService()
+        .getSinglePostModel()
+        .then((value) {
+          setState(() {
+            singlePostModel = value!;
+            isReady = false;
+          });
+        })
+        .onError((error, stackTrace) {
+          print(error);
+          setState(() {
+            isReady = false;
+          });
+        });
+  }
+  @override
+  void initState() {
+    // TODO: implement initState
+    _getSinglePost();
+
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(appBar: AppBar(title: Text("flutter ")));
+    return Scaffold(appBar: AppBar(title: Text("flutter ")),
+    body: isReady == true?
+    Center(child: CircularProgressIndicator(),): 
+    Column(children: [
+      Text(singlePostModel.userId.toString()),
+         Text(singlePostModel.title.toString()),
+            Text(singlePostModel.body.toString())
+    ],)
+    );
+    
   }
 
-  _getSinglePost() {
-    ApiService().getSinglePostModel().then((value){
-
-    })
-  }
+  
 }

@@ -1,4 +1,5 @@
 import 'package:catalog_app/data/notifier.dart';
+import 'package:catalog_app/new/API%20DEMO/view/home_screen.dart';
 import 'package:catalog_app/new/view/widget_tree.dart';
 import 'package:flutter/material.dart';
 
@@ -23,7 +24,7 @@ class MyApp extends StatelessWidget {
               brightness: isDarkMode ? Brightness.dark : Brightness.light,
             ),
           ),
-          home: WidgetTree(),
+          home: HomeScreen(),
         );
       },
     );
