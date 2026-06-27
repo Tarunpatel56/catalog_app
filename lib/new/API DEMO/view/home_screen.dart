@@ -46,6 +46,7 @@ class _HomeScreenState extends State<HomeScreen> {
       Text(singlePostModel.userId.toString()),
          Text(singlePostModel.title.toString()),
             Text(singlePostModel.body.toString())
+          // Test(SinglePostModel.)
     ],)
     );
     
